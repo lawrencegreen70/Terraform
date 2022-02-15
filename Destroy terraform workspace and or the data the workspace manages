@@ -1,0 +1,8 @@
+Destroy resources
+1. 2 ways
+    1. Destroy all resources that is mannaged by the terraform workspace.
+        1. Go to workspace -> click settings (not the top settings) -> Destruction and Deletion -> Queue destroy plan 
+        2. Enter the workspace name -> click queue destroy plan -> confirm and apply -> confirm plan 
+    2. Destroy the workspace from terraform cloud without destroying the infrastructure that they workspace manages.
+        1. Go to workspace -> click settings (not the top settings) -> Destruction and Deletion -> Delete from Terraform Cloud 
+        2. Enter the workspace name -> click the delete button 
