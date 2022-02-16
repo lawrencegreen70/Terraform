@@ -1,0 +1,9 @@
+1. Modify through updating variables (Terraform Cloud web UI)
+    1. In your workspace in terraforms -> click variables -> change instance_name from “Provisioned by Terraform” to “Updated by Terraform” -> click the save button. 
+    2. Click actions -> Start new plan ->  select plan (most common) -> start plan
+    3. Click confirm & apply -> Confirm plan
+    4. Confirm that change was made in AWS.
+
+
+More about variables in terraform cloud 
+https://www.terraform.io/cloud-docs/workspaces/variables
