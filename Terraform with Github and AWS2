@@ -2,23 +2,6 @@ Terraform with GIT & AWS
 *This sample creates an EC2 Instance using terraform cloud and GIT repository 
 
 
-1. Pre-reqs
-    1. In your Terraform 
-        1. Create an account and organization 
-    2. In your AWS account
-        1. Make sure have a user with EC2 full access.
-        2. Make sure that there is a default VPC in the region.
-            1. If not Go to your VPCs -> uncheck all vpcs -> click action -> click create default VPC.
-    3. In your GitHub account
-    4. Fork the below repo into your own account by hitting the fork button in top right 
-        1. https://github.com/hashicorp/tfc-guide-example
-        2. Reop will be called tfc-guide-example 
-            1. Go to tfc-guide-example under your repo -> go into variables.tf file and change region default value to “us-east-2” 
-2. Create a workspace in terraform
-    1. Click workspaces tab -> create new one
-    2. Link git account.  
-        1. May need to disable popup until step is done
-        2. Click version control -> GitHub -> you account ->  “repo that was forked in the previous step” -> create workspace
     3. Create and use a variable set
         1. Click Setting (at top) -> Variable sets -> Create variable set
         2. Name “AWS Credentials”
