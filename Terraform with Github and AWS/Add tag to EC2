@@ -1,0 +1,12 @@
+1. Modify through VCS
+    1. Verify that your workspace has speculative plans enabled. 
+        1. Under the Settings tab -> click Version Control -> Set Automatic speculative plans to enabled -> click Update VCS settings.
+    2. Go to your forked tfc-guide-example repo in GitHub -> Click on the Pull Requests tab -> then click New pull request button to create a pull request.
+    3. Set the base repository to your fork of the tfc-guide-example repo (not the fork in the HashiCorp organization) -> set the base branch to the main/master branch -> Set the the compare branch to add_tag.
+    4. Create the pull request
+    5. View speculative plane through Terraform
+        1. Click details link  the checks portion of the pull request in GitHub
+        2. Go back to the GitHub page when you are done reviewing.
+        3. Click “Merge pull request” -> “Confirm pull request” 
+        4. Go back to the run tab in your terraform workspace -> confirm and apply the changes.
+        5. Go to the EC2 instance and verify that the tag was added.
