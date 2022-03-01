@@ -2,21 +2,13 @@ Terraform with GIT & AWS
 *This sample creates an EC2 Instance using terraform cloud and GIT repository 
 
 
-1. Create and use a variable set
-    1. Click Setting (at top) -> Variable sets -> Create variable set
-    2. Name “AWS Credentials”
-    3. Select a specific workspace  
-    4. Click add variable -> Environment variable -> Set key to AWS_ACCESS_KEY_ID and the value to your AWS Access Key ID (in AWS setting under security & credentials). -> set value to your actual AWS_ACCCESS_KEY_ID value  -> Mark it as Sensitive -> click Save variable.
-    6. Click add Variable -> Environment variable -> Set key to AWS_SECRET_ACCESS_KEY and the value to your AWS Secret Access Key ID. Mark it as Sensitive -> click Save variable. 
-        1. Note if you do not have may need to just generate a new AWS_ACCESS_KEY_ID and change previous value. -> I went into my LawrenceG (has admin access & EC@ full access) user and create a new one.
-    7. Click create variable set.
-2. Create Infrastructure in terraform
+1. Create Infrastructure in terraform
     1. Configure workspace variables 
         1. Go to your workspace -> variable -> add variable 
-            1. Click terraform variable -> Set Key = instance_type ->  value = t2.micro -> save
+            1. Click terraform variable -> Set Key = instance_type ->  Set value = t2.micro -> save
         2. Click add variable again
-            1. Click terraform variable -> Set key = instance_name -> value = Provisioned by Terraform -> click save
-3. Plan infrastructure changes (Run plan to create EC2 instance using terraform cloud)
+            1. Click terraform variable -> Set key = instance_name -> Set value = Provisioned by Terraform -> click save
+2. Plan infrastructure changes (Run plan to create EC2 instance using terraform cloud)
     1. Click actions -> Start new plan ->  select plan (most common) -> start plan
     2. Click confirm & apply -> Confirm plan
 
