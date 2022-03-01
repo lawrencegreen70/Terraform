@@ -1,16 +1,24 @@
-1. In your Terraform 
-    1. Create an account and organization 
-2. In your AWS account
+
+1. In your AWS account
     1. Make sure have a user with EC2 full access.
     2. Make sure that there is a default VPC in the region.
         1. If not Go to your VPCs -> uncheck all vpcs -> click action -> click create default VPC.
-3. In your GitHub account
+2. In your GitHub account
     1. Fork the below repo into your own account by hitting the fork button in top right 
         1. https://github.com/hashicorp/tfc-guide-example
         2. Reop will be called tfc-guide-example 
         1. Go to tfc-guide-example under your repo -> go into variables.tf file and change region default value to “us-east-2” 
-5. Create a workspace in terraform
-    1. Click workspaces tab -> create new one
+3. In your Terraform 
+    1. Create an account and organization Create a workspace in terraform
+        1. Click workspaces tab -> create new one
     2. Link git account.  
         1. May need to disable popup until step is done
         2. Click version control -> GitHub -> you account ->  “repo that was forked in the previous step” -> create workspace
+    3. Create and use a variable set (Needed to access AWS)
+        1. Click Setting (at top) -> Variable sets -> Create variable set
+        2. Name “AWS Credentials”
+        3. Select a specific workspace  
+        4. Click add variable -> Environment variable -> Set key to AWS_ACCESS_KEY_ID and the value to your AWS Access Key ID (in AWS setting under security & credentials). -> set value to your actual AWS_ACCCESS_KEY_ID value  -> Mark it as Sensitive -> click Save variable.
+        6. Click add Variable -> Environment variable -> Set key to AWS_SECRET_ACCESS_KEY and the value to your AWS Secret Access Key ID. Mark it as Sensitive -> click Save variable. 
+            1. Note if you do not have may need to just generate a new AWS_ACCESS_KEY_ID and change previous value. -> I went into my LawrenceG (has admin access & EC@ full access) user and create a new one.
+        7. Click create variable set.
