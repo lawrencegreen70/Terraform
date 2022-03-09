@@ -1,8 +1,17 @@
-Destroy resources
-1. 2 ways
-    1. Destroy all resources that is mannaged by the terraform workspace.
-        1. Go to workspace -> click settings (not the top settings) -> Destruction and Deletion -> Queue destroy plan 
-        2. Enter the workspace name -> click queue destroy plan -> confirm and apply -> confirm plan 
-    2. Destroy the workspace from terraform cloud without destroying the infrastructure that they workspace manages.
-        1. Go to workspace -> click settings (not the top settings) -> Destruction and Deletion -> Delete from Terraform Cloud 
-        2. Enter the workspace name -> click the delete button 
+Destroy terraform resources (can be done through commandline or console)
+
+1. Destroy resources from command line
+    1. Run in directory where resources were created.
+        1. terraform destroy
+    2. Go into AWS console and make sure to delete any unwanted data (such as running instances) that may cost you money.
+        1. Wait for a few minutes and confirm that the unwanted data is not being recreated.
+        
+2. Destroy resources from terraform console.
+    1. 2 ways from the console you can destroy terraform data.
+        1. Destroy all resources that is mannaged by the terraform workspace.
+            1. Go to workspace -> click settings (not the top settings) -> Destruction and Deletion -> Queue destroy plan 
+            2. Enter the workspace name -> click queue destroy plan -> confirm and apply -> confirm plan 
+        2. Destroy the workspace from terraform cloud without destroying the infrastructure that they workspace manages.
+            1. Go to workspace -> click settings (not the top settings) -> Destruction and Deletion -> Delete from Terraform Cloud 
+            2. Enter the workspace name -> click the delete button 
+ 
