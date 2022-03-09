@@ -64,6 +64,6 @@ Acceess, Authenticate, and Test the dashboard
         1. Notice that you cannot access the webpage anymore. 
 
 
-
+Don't forget to destroy your environment and delete anything that may cost you money in AWS
 
 
