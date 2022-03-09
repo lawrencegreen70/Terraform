@@ -1,1 +1,29 @@
+Deploy Kubernetes Metrics Server
+1. wget -O v0.3.6.tar.gz https://codeload.github.com/kubernetes-sigs/metrics-server/tar.gz/v0.3.6 && tar -xzf v0.3.6.tar.gz
+2. kubectl apply -f metrics-server-0.3.6/deploy/1.8+/
+3. kubectl get deployment metrics-server -n kube-system
+
+
+Deploy Kubernetes Dashboard
+1. Run in terminal 
+    1. kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+    2. kubectl proxy
+
+
+Acceess, Authenticate, and Test the dashboard
+1. Access the dashboard website. 
+    1. http://127.0.0.1:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+1. Run in ANOTHER terminal 
+    1. kubectl apply -f https://raw.githubusercontent.com/hashicorp/learn-terraform-provision-eks-cluster/main/kubernetes-dashboard-admin.rbac.yaml
+    2. kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep service-controller-token | awk '{print $1}')
+2. Copy and paste the token receive from the previous command into the webpage then click sign in.
+3. Click cluster on the left side of the webpage.
+    1. You should be able to see a list of nodes.
+4. Log into AWS console and stop/terminate 1 or 2 of the EC2 isntaces.  
+    1. Notice that they chaged the dashboard.
+    2.  Wait a few minutes for the more EC2 instaces to be created and notice the change on the dashboard.
+
+
+
+
 
