@@ -1,1 +1,12 @@
-
+1. Install homebrew
+    1. For Macs (Darwin Kernel OS) go to self service -> browse -> developer -> install homebrew 
+2. In terminal run 
+    1. brew install wget
+    2. brew install awscli
+    3. aws configure 
+    4. Enter the below configuration
+        1. AWS Access Key ID [None]: YOUR_AWS_ACCESS_KEY_ID
+        2. AWS Secret Access Key [None]: YOUR_AWS_SECRET_ACCESS_KEY
+        3. Default region name [None]: us-east-2
+        4. Default output format [None]: json
+    5. brew install kubernetes-cli
