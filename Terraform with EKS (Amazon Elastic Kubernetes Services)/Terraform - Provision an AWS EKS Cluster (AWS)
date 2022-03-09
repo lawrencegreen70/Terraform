@@ -10,7 +10,19 @@ Set up and initialize your Terraform workspace
             3. eks-cluster.tf provisions all the resources (AutoScaling Groups, etc...) required to set up an EKS cluster using the AWS EKS Module.
             4. outputs.tf defines the output configuration.
             5. versions.tf sets the Terraform version to at least 0.14. It also sets versions for the providers used in this sample.
-
+3. Download and configure the providers by initializing your Terraform workspace.
+    1, terraform init
+4. Apply the initiation.
+    1. terraform apply
+    2. Review and type yes then enter
+        1. May take 10 minutes or so.
+5. Check the changes made.
+    1. cat outputs.tf
+    
+    
+Configure kubectl
+1. aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
+   1. Fails until you run terraform init and terraform apply.
 
 
 Deploy and access Kubernetes Dashboard (steps are below)
