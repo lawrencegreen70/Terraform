@@ -1,6 +1,15 @@
-
-
-
+Set up and initialize your Terraform workspace
+1. Clone the repository use for this example.
+    1. git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
+        1. Don't have to do if already done.
+2. Change into the cloned repository directory.
+    1. cd learn-terraform-provision-eks-cluster
+        1. Should contain the below files.
+            1. vpc.tf provisions a VPC, subnets and availability zones using the AWS VPC Module. A new VPC is created for this tutorial so it doesn't impact your existing cloud environment and resources.
+            2. security-groups.tf provisions the security groups used by the EKS cluster.
+            3. eks-cluster.tf provisions all the resources (AutoScaling Groups, etc...) required to set up an EKS cluster using the AWS EKS Module.
+            4. outputs.tf defines the output configuration.
+            5. versions.tf sets the Terraform version to at least 0.14. It also sets versions for the providers used in this sample.
 
 
 
