@@ -3,6 +3,7 @@ Destroy terraform resources (can be done through commandline or console)
 1. Destroy resources from command line
     1. Run in directory where resources were created.
         1. terraform destroy
+        2. Review change and type yes then enter.
     2. Go into AWS console and make sure to delete any unwanted data (such as running instances) that may cost you money.
         1. Wait for a few minutes and confirm that the unwanted data is not being recreated.
         
