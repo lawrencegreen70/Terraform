@@ -1,3 +1,16 @@
+
+
+
+
+
+
+Deploy and access Kubernetes Dashboard (steps are below)
+1. Deploy Kubernetes Metrics Server
+2. Deploy Kubernetes Dashboard
+3. Acceess, Authenticate, and Test the dashboard
+
+
+
 Deploy Kubernetes Metrics Server
 1. wget -O v0.3.6.tar.gz https://codeload.github.com/kubernetes-sigs/metrics-server/tar.gz/v0.3.6 && tar -xzf v0.3.6.tar.gz
 2. kubectl apply -f metrics-server-0.3.6/deploy/1.8+/
