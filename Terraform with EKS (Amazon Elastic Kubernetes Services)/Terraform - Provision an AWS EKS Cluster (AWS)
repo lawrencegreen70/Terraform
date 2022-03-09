@@ -25,7 +25,7 @@ Configure kubectl
    1. Fails until you run terraform init and terraform apply.
 
 
-Deploy and access Kubernetes Dashboard (steps are below)
+Deploy and access Kubernetes Dashboard steps (how to execute steps are below)
 1. Deploy Kubernetes Metrics Server
 2. Deploy Kubernetes Dashboard
 3. Acceess, Authenticate, and Test the dashboard
