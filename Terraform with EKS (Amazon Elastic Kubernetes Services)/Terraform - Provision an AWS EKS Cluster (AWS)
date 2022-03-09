@@ -1,3 +1,6 @@
+Note:  Somewhere in the Set up and initialize your Terraform workspace part of this document I ran into permisisons error.
+1. To fix the error I added a inline policy (can be found in parent directory) and some other permissions to m AWS user.
+
 Set up and initialize your Terraform workspace
 1. Clone the repository use for this example.
     1. git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
@@ -53,9 +56,12 @@ Acceess, Authenticate, and Test the dashboard
 2. Copy and paste the token receive from the previous command into the webpage then click sign in.
 3. Click cluster on the left side of the webpage.
     1. You should be able to see a list of nodes.
-4. Log into AWS console and stop/terminate 1 or 2 of the EC2 isntaces.  
-    1. Notice that they chaged the dashboard.
-    2.  Wait a few minutes for the more EC2 instaces to be created and notice the change on the dashboard.
+4. Test the dashboard
+    1. Log into AWS console and stop/terminate 1 or 2 of the EC2 isntaces.  
+        1. Notice that they chaged the dashboard.
+        2. Wait a few minutes for the more EC2 instaces to be created and notice the change on the dashboard.
+    1. Exit your teminals.
+        1. Notice that you cannot access the webpage anymore. 
 
 
 
