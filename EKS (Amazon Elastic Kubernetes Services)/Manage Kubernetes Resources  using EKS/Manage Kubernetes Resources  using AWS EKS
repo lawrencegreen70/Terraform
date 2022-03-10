@@ -1,0 +1,56 @@
+1. Make the Kubernetes directory that you will practice the example in.
+    1. mkdir learn-terraform-deploy-nginx-kubernetes
+        1. (Don’t need to do if already done)
+2. Enter the directory that you created
+    1. cd learn-terraform-deploy-nginx-kubernetes
+3. Add code to configure your environment into the kubernetes.tf file
+    1. Vi kubernetes.tf
+        1. Add code from “1st code to add to kubernetes.tf file” 
+4. Download the latest version using terraform init 
+    1. terraform init
+
+
+
+Configure kubectl
+1. aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
+
+
+
+Schedule a deployment 
+1. Add code to configure your deployment into to the Kubernetes.tf file
+    1. Vi kubernetes.tf
+            1. Add code from “2nd code to add to kubernetes.tf file” 
+2. Apply the change that you made to create your deployment 
+    1. Terraform apply
+3. See what deployments are running
+    1. kubectl get deployments 
+
+
+
+Schedule a Service
+1. Add code to configure your service into the Kubernetes.tf file.
+    1. This will create a LoadBalancer, which routes traffic from the external load balancer to pods with the matching sector.
+    2. Vi kuvernetes.tf
+            1. Add code from “3rd code to add to kubernetes.tf file” 
+2. Add the code to configure an output to your service into the Kubernetes.tf file
+    1. This will set lb_ip and , create an output which will display the IP address you can use to access the service. Hostname-based (AWS) and IP-based (Azure, Google Cloud) load balancers reference different values. 
+    2. vi kuvernetes.tf
+            1. Add code from “4th code to add to kubernetes.tf file” 
+3. Apply that changes that you made to create the service.
+    1. This will apply the configuration to schedule the LoadBalancer service 
+    2. terraform apply 
+    3. Type Yes
+4. Verify that the service (NGINX service) is running 
+    1. Kubectl get services
+
+
+
+Scale the deployment
+1. Scale your deployment to 4 from 2in kubernetes.tf file.
+    1. Vi kubernetes.tf
+        1. Change replicas = 2 to 4 in kubernetes.tf file.
+    2. Apply the change to scale your deployment
+        1. Terraform apply
+        2. Type yes
+    3. Verify that NGINX service has 4 replicas
+        1. Kubectl get deployments
